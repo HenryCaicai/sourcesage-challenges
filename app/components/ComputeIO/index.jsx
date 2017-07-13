@@ -19,6 +19,13 @@
  *     - The function needs to check that whenever an Opening Character appears, then a Closing
  *     Character comes after it.
  *     - It should handle nesting, so "^^$$" should return `true`.
+ *     - It should ignore other characters that is not "^" or "$".
+ *   - Examples:
+ *     - "^$" => true
+ *     - "$^" => false
+ *     - "^^$$" => true
+ *     - "^$^$" => true
+ *     - "^123^abc$$" => true
  */
 import React from 'react';
 
