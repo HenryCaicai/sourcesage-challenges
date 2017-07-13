@@ -5,29 +5,41 @@ We've made this challenge to simulate a typical workflow working on the frontend
 
 As part of the challenge, you will be making some changes to the code in this repo. Further instructions can be found inside.
 
-The solution is partially structured and deliberately open-ended -- this gives you the chance to clarify the spec with us, and leaves some room for expression.
+The solution is deliberately open-ended -- this gives you the chance to clarify the spec with us.
 
 We are looking out for these things for this exercise:
 * Your familiarity with `git` workflow
 * Ability to pick up our frontend stack
-* Code style
+* Ability to write good test cases for your code
+* Code organization
 
 ## Dependencies
-You need to have `nodejs` and `npm` installed.
+You need to have `nodejs` and `yarn` installed.
 
-Download them here if you haven't already: [nodejs](https://nodejs.org/en/)
+Download them here if you haven't already: [nodejs](https://nodejs.org/en/), [yarn](https://yarnpkg.com/en/)
 
 ## Installation
 Clone this repository, then run
 
-`npm install`.
+`yarn`.
 
 ## Development
 To start developing your solution, you can use the built-in dev server by running
 
-`npm start`.
+`yarn start`.
 
 Then visit `localhost:3000`.
+
+## Testing
+A test suite has been setup for you, please use it
+
+`yarn test`
+for a single run.
+
+or
+
+`yarn test:watch`
+to keep it running.
 
 ## Submission
 
