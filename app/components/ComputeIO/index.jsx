@@ -30,27 +30,76 @@
 import React from 'react';
 
 export function Input(props) {
-  return <div />;
+
+  function _handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      document.getElementById("compute").click();
+    }
+  }
+
+  return (
+          <div>
+            <label>Input: </label>
+            <input type="text" id="input" defaultValue="" onKeyPress={_handleKeyPress}/>
+          </div>
+    );
+
 }
 
 export function Button(props) {
-  return <div />;
+
+  function compute(event) {
+    var inputText = document.getElementById("input").value;
+    var result=isClosed(inputText);
+    document.getElementById("output").innerHTML = result;
+  }
+
+  return (<button id="compute" onClick={compute}>{props.children}</button>);
+
 }
 
 export function Output(props) {
-  return <div />;
+
+  return (
+      <div>
+        <label>Output: </label>
+        <label id="output"></label>
+      </div>
+    );
+
 }
 
 export function isClosed(str) {
-  return false;
+
+  var result = true;
+  var strArray = str.split("");
+  var stack = [];
+
+  for(var i=0;i<strArray.length;i++){
+    var element = strArray[i];
+    
+    if(element === "^") {
+      stack.push(element);
+    }else if(element === "$" && stack.length === 0){
+      stack = false;
+      break;
+    }else if(element === "$"){
+      stack.pop();
+    }
+  };
+
+  if(stack.length !== 0) {result = false;}
+
+  return result;
 }
 
 export class ComputeIO extends React.Component {
+
   render() {
     return (
       <section>
         <Input />
-        <Button />
+        <Button >Compute</Button>
         <Output />
       </section>
     );
